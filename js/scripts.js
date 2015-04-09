@@ -5,9 +5,9 @@ var getScore = function(word) {
                   'f': 4, 'h': 4, 'v': 4, 'w': 4, 'y': 4,
                   'k': 5,
                   'j': 8, 'x': 8,
-                  'q': 10, 'z': 10,
-                  ' ': 0};
+                  'q': 10, 'z': 10};
 
+  //take the word and strip out everything but letters then split it into an array
   var word_array = word.toLowerCase().replace(/[^a-z]/g, "").split("");
   var count = 0;
 

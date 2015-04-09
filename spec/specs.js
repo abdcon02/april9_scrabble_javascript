@@ -35,4 +35,8 @@ describe('getScore', function() {
     expect(getScore("Tom\'s Problem")).to.equal(19);
   });
 
+  it('accetps a " .." for input and returns a score of 0', function(){
+    expect(getScore(" ..")).to.equal(0);
+  });
+
 });
