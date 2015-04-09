@@ -19,8 +19,20 @@ describe('getScore', function() {
     expect(getScore("strength")).to.equal(12);
   });
 
-  it('accepts a "qi" for input and returns a score of 11', function() {
-    expect(getScore("qi")).to.equal(11);
+  it('accepts a "QI" for input and returns a score of 11', function() {
+  expect(getScore("QI")).to.equal(11);
+  });
+
+  it('accepts a "Hello Tom" for input and returns a score 13', function() {
+    expect(getScore("Hello Tom")).to.equal(13);
+  });
+
+  it('accepts a "Toms Problem" for input and returns a score of 19', function() {
+    expect(getScore("Toms Problem")).to.equal(19);
+  });
+
+  it('accepts a "Tom\'s Problem" for input and returns a score of 19', function() {
+    expect(getScore("Tom\'s Problem")).to.equal(19);
   });
 
 });

@@ -5,9 +5,10 @@ var getScore = function(word) {
                   'f': 4, 'h': 4, 'v': 4, 'w': 4, 'y': 4,
                   'k': 5,
                   'j': 8, 'x': 8,
-                  'q': 10, 'z': 10};
+                  'q': 10, 'z': 10,
+                  ' ': 0};
 
-  var word_array = word.toLowerCase().split("");
+  var word_array = word.toLowerCase().replace(/[^a-z]/g, "").split("");
   var count = 0;
 
   word_array.forEach(function(letter) {
@@ -16,3 +17,19 @@ var getScore = function(word) {
 
   return count;
 }
+
+$(document).ready(function() {
+
+  $("form#score").submit(function(event) {
+
+    var word = $("#word").val();
+
+    var score = getScore(word);
+
+    $("#points").text(score);
+    $("#return").show();
+
+    event.preventDefault();
+  });
+
+});
